@@ -6,9 +6,9 @@ The API key is created in the dashboard and used only on your server. This libra
 
 1. Create an account at [dashboard.voybit.com](https://dashboard.voybit.com).
 2. Open **Gateways** and create a payment gateway. Keep it enabled.
-3. Open **API keys**, choose **Create secret key**, and bind it to that gateway. Copy the full `vb_live_…` value once. Your server sends it as `X-Voybit-Api-Key` when it creates the payment.
+3. Open **API keys**, choose **Create secret key**, and bind it to that gateway. Copy the full `vb_live_…` value once. Your server sends it as `X-Voybit-Api-Key` when it creates a checkout session.
 
-Your server creates the payment and returns `checkout_url`. This package does not take an API key.
+Your server creates a checkout session and returns `checkout_url`. The hosted page lets the payer choose from the gateway’s enabled assets and confirm a live quote before the address and QR are created. This package does not take an API key.
 
 ```swift
 .package(url: "https://github.com/VOYBIT/voybit-payment-gateway-swift", branch: "main")
